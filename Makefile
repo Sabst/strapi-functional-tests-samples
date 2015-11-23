@@ -1,5 +1,7 @@
 TESTS = test/**/*.js
 
+.DEFAULT_GOAL := test
+
 install:
 	@npm install
 
@@ -17,4 +19,4 @@ test-coverage: install
 	--opts mocha.opts \
 	$(TESTS)
 
-.PHONY: test test-coverage test-coverage-report
+.PHONY: test test-coverage
