@@ -1,0 +1,81 @@
+{
+  "routes": {
+    "GET /order": {
+      "controller": "OrderRest",
+      "action": "find",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "GET /order/:id": {
+      "controller": "OrderRest",
+      "action": "findOne",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /order": {
+      "controller": "OrderRest",
+      "action": "create",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "PUT /order/:id": {
+      "controller": "OrderRest",
+      "action": "update",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "DELETE /order/:id": {
+      "controller": "OrderRest",
+      "action": "destroy",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /order/:parentId/:relation": {
+      "controller": "OrderRest",
+      "action": "add",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "DELETE /order/:parentId/:relation/:id": {
+      "controller": "OrderRest",
+      "action": "remove",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "PUT /order/:id/reset": {
+      "controller": "OrderRest",
+      "action": "reset",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "PUT /order/:id/confirm": {
+      "controller": "OrderRest",
+      "action": "confirm",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "PUT /order/:id/pay": {
+      "controller": "OrderRest",
+      "action": "pay",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    }
+  }
+}
